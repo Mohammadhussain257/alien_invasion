@@ -1,6 +1,7 @@
 import pygame
 import os
 
+
 class Ship:
     """ A class to manage the ship"""
 
@@ -23,10 +24,11 @@ class Ship:
 
     def update(self):
         """ Update the ship's position based on the movement flag"""
-        if self.moving_right:
-            self.rect.x +=1
-        if self.moving_left:
-            self.rect.x -=1
+        if self.moving_right and self.rect.right < self.screen_rect.right:
+            # update the ship's x value, not the rect
+            self.rect.x += float(1.5)
+        if self.moving_left and self.rect.left > 0:
+            self.rect.x -= float(1.5)
 
     def blitme(self):
         """Draw the ship at its current location"""

@@ -47,6 +47,7 @@ class AlienInvasion:
         # Make the most recently drawn screen visible.
         pygame.display.flip()
 
+
 # creating setting instance
 setting = Setting()
 
