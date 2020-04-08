@@ -30,6 +30,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
     def _check_events(self):
@@ -99,6 +100,9 @@ class AlienInvasion:
         alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
         self.aliens.add(alien)
 
+    def _update_aliens(self):
+        """ Update the positions of all aliens in the fleet"""
+        self.aliens.update()
 
     def _update_screen(self):
         # Redraw the screen during each pass through the loop

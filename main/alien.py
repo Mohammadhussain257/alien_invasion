@@ -1,6 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 import os
+from main.settings import Setting
 
 
 class Alien(Sprite):
@@ -22,3 +23,11 @@ class Alien(Sprite):
 
         # Store the alien's exact horizontal position
         self.x = float(self.rect.x)
+
+    def update(self):
+        """ Move the alien to the right"""
+        self.x += setting.alien_speed
+        self.rect.x = self.x
+
+
+setting = Setting()
